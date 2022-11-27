@@ -1,0 +1,3 @@
+<div>
+    {{ $production }}
+</div>
