@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Znck\Eloquent\Traits\BelongsToThrough;
 
+
 class Change extends Model
 {
     use HasFactory, SoftDeletes, BelongsToThrough;
@@ -14,10 +15,6 @@ class Change extends Model
     protected $guarded = ['id','created_at',
     'updated_at', 'deleted_at'];
 
-    //Relación Uno a Muchos inversa
-    public function statechange(){
-        return $this->belongsTo(statechange::class);
-    }
 
     //Relación Uno a Muchos inversa
     public function typechange(){
@@ -39,6 +36,11 @@ class Change extends Model
     //Relacion de Uno a Muchos inversa
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+        //Relación Uno a Muchos inversa
+    public function statechange(){
+        return $this->belongsTo(statechange::class);
     }
 
      public function machine()
