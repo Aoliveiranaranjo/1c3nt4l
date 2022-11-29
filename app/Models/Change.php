@@ -15,10 +15,14 @@ class Change extends Model
     protected $guarded = ['id','created_at',
     'updated_at', 'deleted_at'];
 
+    //Relación Uno a Muchos inversa
+    public function statechange(){
+        return $this->belongsTo(Statechange::class);
+    }
 
     //Relación Uno a Muchos inversa
     public function typechange(){
-        return $this->belongsTo(typechange::class);
+        return $this->belongsTo(Typechange::class);
     }
 
     //Relacion de Uno a Muchos inversa
@@ -37,13 +41,7 @@ class Change extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
-
-        //Relación Uno a Muchos inversa
-    public function statechange(){
-        return $this->belongsTo(statechange::class);
-    }
-
-     public function machine()
+    public function machine()
      {
          return $this->belongsToThrough(Machine::class,  Production::class);
      }
