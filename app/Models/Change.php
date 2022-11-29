@@ -41,7 +41,8 @@ class Change extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
-    public function machine()
+
+     public function machine()
      {
          return $this->belongsToThrough(Machine::class,  Production::class);
      }
