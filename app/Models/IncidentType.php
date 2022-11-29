@@ -16,6 +16,6 @@ class IncidentType extends Model
 
     //Relación Uno a Muchos
     public function incidents(){
-        return $this->hasMany(incident::class);
+        return $this->hasMany(Incident::class);
     }
 }

@@ -15,6 +15,6 @@ class Charge extends Model
 
     //Relación Uno a Muchos
     public function employees(){
-        return $this->hasMany(employee::class);
+        return $this->hasMany(Employee::class);
     }
 }

@@ -16,7 +16,7 @@ class Mechanic extends Model
 
     //Relación Uno a Muchos
     public function changes(){
-        return $this->hasMany(changes::class);
+        return $this->hasMany(Changes::class);
     }
 
     //Relación Uno a Muchos

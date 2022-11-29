@@ -16,7 +16,7 @@ class Room extends Model
 
     //Relación Uno a Muchos
     public function machines(){
-        return $this->hasMany(machine::class);
+        return $this->hasMany(Machine::class);
     }
     public function productions()
     {

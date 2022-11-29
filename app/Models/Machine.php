@@ -15,7 +15,7 @@ class Machine extends Model
 
     //Relación Uno a Muchos inversa
     public function room(){
-        return $this->belongsTo(room::class);
+        return $this->belongsTo(Room::class);
     }
     //Relación Uno a Muchos
     public function productions(){

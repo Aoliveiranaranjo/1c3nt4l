@@ -40,19 +40,19 @@ class Production extends Model
 
     //Relación Muchos a Muchos
     public function employees(){
-        return $this->belongsToMany(employee::class)->as('trabajadoras')
+        return $this->belongsToMany(Employee::class)->as('trabajadoras')
             ->withPivot('id', 'active')->withTimestamps();
     }
 
     //Relación Muchos a Muchos
     public function activeEmployees(){
-        return $this->belongsToMany(employee::class)->as('trabajadoras')
+        return $this->belongsToMany(Employee::class)->as('trabajadoras')
         ->withPivot('id', 'active')->wherePivot('active', 1)
             ->withTimestamps();
     }
     //Relación Muchos a Muchos
     public function inactiveEmployees(){
-        return $this->belongsToMany(employee::class)->as('trabajadoras')
+        return $this->belongsToMany(Employee::class)->as('trabajadoras')
         ->withPivot('id', 'active')->wherePivot( 'active', 0)
             ->withTimestamps();
     }

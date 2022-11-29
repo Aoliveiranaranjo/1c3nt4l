@@ -21,15 +21,15 @@ class Employee extends Model
 
     //Relación Uno a Muchos inversa
     public function sex(){
-        return $this->belongsTo(sex::class);
+        return $this->belongsTo(Sex::class);
     }
     //Relación Uno a Muchos inversa
     public function charge(){
-        return $this->belongsTo(charge::class);
+        return $this->belongsTo(Charge::class);
     }
     //Relación Uno a Muchos inversa
     public function group(){
-        return $this->belongsTo(group::class);
+        return $this->belongsTo(Group::class);
     }
 
     //Relación Muchos a Muchos
