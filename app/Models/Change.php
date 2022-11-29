@@ -17,12 +17,12 @@ class Change extends Model
 
     //Relación Uno a Muchos inversa
     public function statechange(){
-        return $this->belongsTo(Statechange::class);
+        return $this->belongsTo(StateChange::class);
     }
 
     //Relación Uno a Muchos inversa
     public function typechange(){
-        return $this->belongsTo(Typechange::class);
+        return $this->belongsTo(TypeChange::class);
     }
 
     //Relacion de Uno a Muchos inversa
