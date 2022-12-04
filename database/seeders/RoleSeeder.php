@@ -115,6 +115,7 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'sistem.production.express'])->assignRole([$role1, $role2, $role3, $role4, $role6, $role7]);
         Permission::create(['name' => 'sistem.production.stop'])->assignRole([$role1, $role2, $role3, $role4, $role6, $role7]);
         Permission::create(['name' => 'sistem.production.end'])->assignRole([$role1, $role2, $role3, $role4, $role6, $role7]);
+        Permission::create(['name' => 'sistem.production.outsourced'])->assignRole([$role1, $role2, $role3, $role4, $role6, $role7]);
         Permission::create(['name' => 'sistem.production.closed'])->assignRole([$role1, $role2, $role3, $role4, $role6, $role7]);
         Permission::create(['name' => 'sistem.productions.edit.end'])->assignRole([$role1, $role2, $role3, $role4, $role6, $role7]);
         Permission::create(['name' => 'sistem.change.index'])->assignRole([$role1, $role2, $role3, $role4, $role6, $role7]);

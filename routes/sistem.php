@@ -42,6 +42,7 @@ use App\Http\Livewire\Sistem\Production\ShowProductionEnd;
 use App\Http\Livewire\Sistem\Production\ShowProductionExpres;
 use App\Http\Livewire\Sistem\Production\ShowProductionNew;
 use App\Http\Livewire\Sistem\Production\ShowProductionStop;
+use App\Http\Livewire\Sistem\Production\ShowProductionOutsourced;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
@@ -177,6 +178,7 @@ Route::get('/productions-express', ShowProductionExpres::class)->middleware('can
 Route::get('/productions-stop', ShowProductionStop::class)->middleware('can:sistem.production.stop')->name('sistem.production.stop');
 Route::get('/productions-end', ShowProductionEnd::class)->middleware('can:sistem.production.end')->name('sistem.production.end');
 Route::get('/productions-closed', ShowProductionClosed::class)->middleware('can:sistem.production.closed')->name('sistem.production.closed');
+Route::get('/productions-outsourced', ShowProductionOutsourced::class)->middleware('can:sistem.production.closed')->name('sistem.production.outsourced');
 Route::get('productions-end/{production}/edit-end', EditProductionEnd::class)->middleware('can:sistem.productions.edit.end')->name('sistem.productions.edit.end');
 
 //Cambios

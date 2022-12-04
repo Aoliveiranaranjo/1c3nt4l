@@ -40,6 +40,10 @@ class StateProductionSeeder extends Seeder
                 'name' => 'Terminada',
 
             ],
+            [
+                'name' => 'Terceros',
+
+            ],
 
 
            ];

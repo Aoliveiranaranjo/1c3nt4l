@@ -14,6 +14,11 @@
                     En Cambio
                 </x-jet-secondary-button>
             </a>
+            <a class="ml-auto" href="{{ route('sistem.production.outsourced') }}">
+                <x-jet-secondary-button class="ml-auto text-white bg-violet-400">
+                    Terceros
+                </x-jet-secondary-button>
+            </a>
 
             <a class="ml-auto" href="{{ route('sistem.production.active') }}">
                 <x-jet-secondary-button class="ml-auto text-white bg-violet-400">

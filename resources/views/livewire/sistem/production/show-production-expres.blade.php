@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex items-center">
             <h2 class="text-xl font-semibold leading-tight text-gray-500">
-                Producciones por cerradas
+                Producciones edicion express
             </h2>
             <a class="ml-auto" href="{{ route('sistem.production.new') }}">
                 <x-jet-secondary-button class="ml-auto text-white bg-violet-400">
@@ -14,7 +14,11 @@
                     En Cambio
                 </x-jet-secondary-button>
             </a>
-
+            <a class="ml-auto" href="{{ route('sistem.production.outsourced') }}">
+                <x-jet-secondary-button class="ml-auto text-white bg-violet-400">
+                    Terceros
+                </x-jet-secondary-button>
+            </a>
             <a class="ml-auto" href="{{ route('sistem.production.active') }}">
                 <x-jet-secondary-button class="ml-auto text-white bg-violet-400">
                     En Producción

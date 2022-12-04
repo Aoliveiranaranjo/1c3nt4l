@@ -4,29 +4,25 @@
             <h2 class="text-xl font-semibold leading-tight text-gray-500">
                 Producciones nuevas
             </h2>
-            <a class="ml-auto" href="{{ route('sistem.production.index') }}">
+            <a class="ml-auto" href="{{ route('sistem.production.new') }}">
                 <x-jet-secondary-button class="ml-auto text-white bg-violet-400">
                     Nuevas
                 </x-jet-secondary-button>
             </a>
             <a class="ml-auto" href="{{ route('sistem.production.change') }}">
+                <x-jet-secondary-button class="ml-auto text-white bg-violet-400">
+                    En Cambio
+                </x-jet-secondary-button>
+            </a>
+            <a class="ml-auto" href="{{ route('sistem.production.index') }}">
                 <x-jet-secondary-button class="ml-auto bg-slate-300">
                     Todas
                 </x-jet-secondary-button>
             </a>
-            <a class="ml-auto" href="{{ route('sistem.production.outsourced') }}">
-                <x-jet-secondary-button class="ml-auto text-white bg-violet-400">
-                    Terceros
-                </x-jet-secondary-button>
-            </a>
+
             <a class="ml-auto" href="{{ route('sistem.production.active') }}">
                 <x-jet-secondary-button class="ml-auto text-white bg-violet-400">
                     En Producción
-                </x-jet-secondary-button>
-            </a>
-            <a class="ml-auto" href="{{ route('sistem.production.express') }}">
-                <x-jet-secondary-button class="ml-auto text-white bg-violet-400">
-                    Express
                 </x-jet-secondary-button>
             </a>
             <a class="ml-auto" href="{{ route('sistem.production.stop') }}">
@@ -140,14 +136,6 @@
                             <th
                                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                 Limp.
-                            </th>
-                            <th
-                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
-                                F. Final
-                            </th>
-                            <th
-                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
-
                             </th>
 
                         </tr>
