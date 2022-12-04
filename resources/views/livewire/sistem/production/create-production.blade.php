@@ -62,7 +62,7 @@
                     <option value="" disabled selected>Seleciona una maquína</option>
                     @foreach ($machines as $machine)
 
-                    <option value="{{ $machine->id }}" selected>{{ $machine->codMachine }}
+                    <option value="{{ $machine->id }}" selected>{{ $machine->codMachine }}  {{ $machine->abbreviated }}
 
                     </option>
 

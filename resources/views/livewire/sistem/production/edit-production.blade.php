@@ -215,7 +215,7 @@
                     class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm w-full">
                     @foreach ($machines as $machine)
                         <option value="{{ $production->machine_id = $machine->id }}" selected>
-                            {{ $machine->codMachine }}
+                            {{ $machine->codMachine }} {{ $machine->abbreviated }}
 
                         </option>
                     @endforeach

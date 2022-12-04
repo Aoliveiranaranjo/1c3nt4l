@@ -52,15 +52,21 @@
                     class="w-full"/>
                 <x-jet-input-error for="machine.cadence"/>
             </div>
-            {{-- abreviación cliente --}}
             <div>
-                <x-jet-label value="Estado"/>
-                <x-jet-input
-                    wire:model.defer='machine.status'
-                    type="checkbox"
-                    class="text-center"/>
-                <x-jet-input-error for="machine.status"/>
+                <x-jet-label value="Abreviación" />
+                <x-jet-input wire:model.defer='machine.abbreviated' type="text" class="w-full" />
+                <x-jet-input-error for="machine.abbreviated" />
             </div>
+        </div>
+        <div class="grid grid-cols-1 gap-6 mb-4">
+             <div>
+                <x-jet-label value="Estado"/>
+                    <x-jet-input
+                        wire:model.defer='machine.status'
+                        type="checkbox"
+                        class="text-center"/>
+                <x-jet-input-error for="machine.status"/>
+           </div>
         </div>
         {{-- boton --}}
         <div class="flex items-center justify-end mt-4">
@@ -73,7 +79,7 @@
                 wire:loading.attr="disabled"
                 wire:target="save"
                 wire:click="save">
-                    Actualizar cliente
+                    Actualizar maquína
             </x-jet-button>
 
         </div>

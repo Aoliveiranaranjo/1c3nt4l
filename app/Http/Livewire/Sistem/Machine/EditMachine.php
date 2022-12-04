@@ -11,6 +11,7 @@ class EditMachine extends Component
     protected $rules  = [
         'machine.codMachine' => 'required|max:10',
         'machine.name' => 'required|max:50',
+        'machine.abbreviated' => 'max:25',
         'machine.cadence' => 'required|max:20',
         'machine.status' => 'nullable',
         'machine.room_id' => 'required',
@@ -24,6 +25,7 @@ class EditMachine extends Component
     protected $validationAttributes = [
         'codMachine' => 'código',
         'name' => 'nombre',
+        'abbreviated' => 'abreviación',
         'cadence' => 'cadencia',
         'room_id' => 'sala',
     ];

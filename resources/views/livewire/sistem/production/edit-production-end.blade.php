@@ -148,7 +148,7 @@
                 <select class="w-full" wire:model.defer="production.machine_id">
                     @foreach ($machines as $machine)
                         <option value="{{ $production->machine_id = $machine->id }}" selected>
-                            {{ $machine->codMachine }}
+                            {{ $machine->codMachine }} {{ $machine->abbreviated }}
 
                         </option>
                     @endforeach
