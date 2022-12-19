@@ -1,8 +1,7 @@
 <div>
-    @dump($filters)
     {{-- filtro --}}
     <div class="bg-white rounded p-8 shadow mb-6">
-        <h2 class="text-2x1 font-semibold mb-4">Generar reportes</h2>
+        <h2 class="text-2x1 font-semibold mb-4">Generar reporte cliente</h2>
         {{-- <div class="mb-4">
             Nombre cliente:
             <select class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" name="" id="">
@@ -17,20 +16,35 @@
             <x-jet-input type="text" wire:model="filters.search" class="w-full" placeholder="Buscar" />
 
         </div>
+        <div class="space-x-4 mb-4">
+            Código cliente:
+            <x-jet-input type="text" wire:model="filters.cod" class="w-36" placeholder="" />
 
+        </div>
         <div class="flex space-x-4 mb-4">
             <div>
                 Desde fecha:
-                <x-jet-input  wire:model="filters.fromDate" type="date" class="w-36"  />
+                <x-jet-input wire:model="filters.fromDate" type="date" class="w-36" />
             </div>
             <div>
                 Hasta fecha:
-                <x-jet-input  wire:model="filters.toDate" type="date" class="w-36" />
+                <x-jet-input wire:model="filters.toDate" type="date" class="w-36" />
             </div>
         </div>
 
+        <div class="space-x-4 mb-4">
+            Selecciona un estado:
+            <select wire:model="filters.status"
+                class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm w-36">
+                    <option value="true" selected>Activo</option>
+                    <option value="false" selected>Inactivo</option>
+                
+            </select>
+            <x-jet-input-error for="filters.status" />
+        </div>
+     
         <div>
-            <x-jet-button>
+            <x-jet-button wire:click="generateReport">
                 Generar reporte
             </x-jet-button>
 
