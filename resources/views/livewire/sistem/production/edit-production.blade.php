@@ -104,7 +104,7 @@
                     class="w-full  bg-gray-200" disabled />
             </div>
             <div>
-                <x-jet-label value="Máqiuna" />
+                <x-jet-label value="Máquina" />
                 <x-jet-input value="{{ $production->machine->codMachine }}   {{ $production->machine->abbreviated }} "
                     type="text" class="w-full  bg-gray-200" disabled />
             </div>
@@ -211,7 +211,7 @@
 
             <div>
                 <x-jet-label value="Selecciona una maquína" />
-                <select wire:model="production.machine_id"
+                <select wire:model.defer="production.machine_id"
                     class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm w-full">
                     @foreach ($machines as $machine)
                         <option value="{{ $production->machine_id = $machine->id }}" selected>

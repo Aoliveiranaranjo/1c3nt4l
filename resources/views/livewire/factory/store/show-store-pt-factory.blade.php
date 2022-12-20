@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex items-center">
             <h2 class="text-xl font-semibold leading-tight text-gray-500">
-               Producto terminados por entregar
+                Producto terminados por entregar
             </h2>
             <a class="ml-auto" href="{{ route('factory.store.pt.closed') }}">
                 <x-jet-secondary-button class="ml-auto text-white bg-blue-400">
@@ -98,12 +98,14 @@
                         @foreach ($qualityProductions as $qualityProduction)
                             <tr>
                                 <td class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap">
-                                    <a href=" {{ route('factory.store.pt.edit', $qualityProduction) }} ">
-                                        <x-jet-secondary-button class="text-indigo-500 hover:text-indigo-900">
-                                            <i class="fas fa-edit"></i>
-                                        </x-jet-secondary-button>
-                                        cali
-                                    </a>
+                                    @can('adminGerenciaCalidad.view')
+                                        <a href=" {{ route('factory.store.pt.edit', $qualityProduction) }} ">
+                                            <x-jet-secondary-button class="text-indigo-500 hover:text-indigo-900">
+                                                <i class="fas fa-edit"></i>
+                                            </x-jet-secondary-button>
+
+                                        </a>
+                                    @endcan
 
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap">
@@ -154,9 +156,11 @@
                                 </td>
 
                                 <td class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap">
-                                    <x-jet-secondary-button wire:click="$emit('deliveryqualityProduction', {{ $qualityProduction }} )" class="text-gray-700 bg-gray-200 hover:bg-red-500  hover:text-white">
+                                    <x-jet-secondary-button
+                                        wire:click="$emit('deliveryqualityProduction', {{ $qualityProduction }} )"
+                                        class="text-gray-700 bg-gray-200 hover:bg-red-500  hover:text-white">
                                         <i class="fa-solid fa-truck"></i>
-                                    </x-jet-danger-button>
+                                        </x-jet-danger-button>
                                 </td>
                             </tr>
                         @endforeach

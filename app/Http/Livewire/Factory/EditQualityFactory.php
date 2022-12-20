@@ -18,7 +18,7 @@ class EditQualityFactory extends Component
     //esto pendiente de modificar
     protected $rules  = [
 
-        'production.observation' => 'nullable',
+        'production.observation' => 'nullable|max:255',
         'production.approved' => 'nullable',
 
        // 'room_id' => 'required'

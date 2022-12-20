@@ -61,71 +61,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-/*
-//Clientes
-Route::get('/customers', ShowCustomer::class)->name('sistem.customer.index');
-Route::get('customers/create', CreateCustomer::class)->name('sistem.customers.create');
-Route::get('customers/{customer}/edit', EditCustomer::class)->name('sistem.customers.edit');
-Route::get('customers/export', [CustomerController::class, 'export'])->name('sistem.customers.export');
-Route::get('customers/import', [CustomerController::class, 'import'])->name('sistem.customers.import');
 
-
-//Articulos
-Route::get('/articles', ShowArticle::class)->name('sistem.article.index');
-Route::get('articles/create', CreateArticle::class)->name('sistem.articles.create');
-Route::get('articles/{article}/edit', EditArticle::class)->name('sistem.articles.edit');
-
-//Empleados
-Route::get('/employees', ShowEmployee::class)->name('sistem.employee.index');
-Route::get('employees/create', CreateEmployee::class)->name('sistem.employees.create');
-Route::get('employees/{employee}/edit', EditEmployee::class)->name('sistem.employees.edit');
-Route::get('/employees-dashboard', ShowEmployeesDashboard::class)->name('sistem.employee.dashboard.index');
-
-//Ordenes
-Route::get('orders/create', CreateOrder::class)->name('sistem.orders.create');
-
-Route::get('/orders', ShowOrder::class)->name('sistem.order.index');
-Route::get('/orders-null', ShowOrderNull::class)->name('sistem.order.null');
-Route::get('/orders-new', ShowOrderNew::class)->name('sistem.order.new');
-Route::get('/orders-progress', ShowOrderProgress::class)->name('sistem.order.progress');
-Route::get('/orders-stop', ShowOrderStop::class)->name('sistem.order.stop');
-Route::get('/orders-closed', ShowOrderClosed::class)->name('sistem.order.closed');
-
-Route::get('orders/{order}/edit', EditOrder::class)->name('sistem.orders.edit');
-Route::get('orders-null/{order}/edit', EditOrderNull::class)->name('sistem.orders.edit.null');
-Route::get('orders-new/{order}/edit', EditOrderNew::class)->name('sistem.orders.edit.new');
-Route::get('orders-progress/{order}/edit', EditOrderProgress::class)->name('sistem.orders.edit.progress');
-Route::get('orders-stop/{order}/edit', EditOrderStop::class)->name('sistem.orders.edit.stop');
-Route::get('orders-closed/{order}/edit', EditOrderClosed::class)->name('sistem.orders.edit.closed');
-
-
-//Producción
-Route::get('/productions', ShowProduction::class)->name('sistem.production.index');
-Route::get('productions/{production}/view', ViewProductionActiveFactory::class)->name('sistem.productions.view');
-
-//Route::get('productions/create', CreateProduction::class)->name('sistem.productions.create');
-Route::get('productions/{production}/edit', EditProduction::class)->name('sistem.productions.edit');
-Route::get('productions-closed/{production}/edit-closed', EditProductionClosed::class)->name('sistem.productions.edit.closed');
-Route::get('/productions-new', ShowProductionNew::class)->name('sistem.production.new');
-Route::get('/productions-change', ShowProductionChange::class)->name('sistem.production.change');
-Route::get('/productions-active', ShowProductionActive::class)->name('sistem.production.active');
-Route::get('/productions-express', ShowProductionExpres::class)->name('sistem.production.express');
-Route::get('/productions-stop', ShowProductionStop::class)->name('sistem.production.stop');
-Route::get('/productions-end', ShowProductionEnd::class)->name('sistem.production.end');
-Route::get('/productions-closed', ShowProductionClosed::class)->name('sistem.production.closed');
-Route::get('productions-end/{production}/edit-end', EditProductionEnd::class)->name('sistem.productions.edit.end');
-
-//Cambios
-Route::get('/changes', ShowChange::class)->name('sistem.change.index');
-Route::get('changes/{change}/edit', EditChange::class)->name('sistem.changes.edit');
-Route::get('/changes-closed', ShowChangeClosed::class)->name('sistem.change.index2');
-Route::get('/changes-closed/{id}/restore', ShowChangeClosed::class, 'restore')->name('sistem.change.restore');
-
-//Articulos
-Route::get('/machines', ShowMachine::class)->name('sistem.machine.index');
-Route::get('machines/create', CreateMachine::class)->name('sistem.machines.create');
-Route::get('machines/{machine}/edit', EditMachine::class)->name('sistem.machines.edit');
-*/
 
 //Clientes
 Route::get('/customers', ShowCustomer::class)->middleware('can:sistem.customer.index')->name('sistem.customer.index');

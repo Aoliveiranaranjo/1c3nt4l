@@ -66,7 +66,8 @@ class RoleSeeder extends Seeder
 
             //vistas mixtas
         Permission::create(['name' => 'adminGerencia.view'])->assignRole($role1, $role2);
-        Permission::create(['name' => 'JefMecMecanicos.view'])->assignRole($role9, $role5);
+        Permission::create(['name' => 'adminGerenciaCalidad.view'])->assignRole($role1, $role2, $role8);
+        Permission::create(['name' => 'JefMecMecanicos.view'])->assignRole($role1, $role9, $role5);
         Permission::create(['name' => 'adminGeAdminis.view'])->assignRole($role1, $role2,  $role3);
         Permission::create(['name' => 'adminGeAdmJPlan.view'])->assignRole($role1, $role2,  $role3, $role4);
         Permission::create(['name' => 'adminGeAdmJPlanPlani.view'])->assignRole($role1, $role2,  $role3, $role4, $role6);

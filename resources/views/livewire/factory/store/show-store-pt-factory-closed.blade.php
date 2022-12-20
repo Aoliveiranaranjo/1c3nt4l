@@ -41,7 +41,7 @@
                             </th>
                             <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50"
                                 wire:click="order('created_at')">
-                                Creado
+                                Fecha
 
                                 {{-- Sort --}}
                                 @if ($sort == 'created_at')
@@ -111,12 +111,13 @@
                             <tr>
 
                                 <td class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap">
-                                    <x-jet-secondary-button
-                                        wire:click="$emit('resetdeliveryqualityProduction', {{ $qualityProduction }} )"
-                                        class="text-gray-700 bg-gray-200 hover:bg-red-500  hover:text-white">
-                                        <i class="fa-solid fa-backward-step"></i>
+                                    @can('adminGerenciaCalidad.view')
+                                        <x-jet-secondary-button
+                                            wire:click="$emit('resetdeliveryqualityProduction', {{ $qualityProduction }} )"
+                                            class="text-gray-700 bg-gray-200 hover:bg-red-500  hover:text-white">
+                                            <i class="fa-solid fa-backward-step"></i>
                                         </x-jet-danger-button>
-                                        cali
+                                    @endcan
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap">
                                     <div class="text-sm leading-5 text-gray-900">

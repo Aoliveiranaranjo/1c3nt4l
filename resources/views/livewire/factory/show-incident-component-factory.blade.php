@@ -28,6 +28,9 @@
                         <th class="px-4 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                             Descripción
                         </th>
+                        <th class="px-4 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
+                            Responsable
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,6 +48,9 @@
                         </td>
                         <td class="px-6 py-4">
                             {{$incident->description}}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{$incident->user->name}}
                         </td>
 
                     </tr>

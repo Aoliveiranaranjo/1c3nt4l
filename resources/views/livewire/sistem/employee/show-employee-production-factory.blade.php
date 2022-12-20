@@ -67,7 +67,7 @@
                 @endif
             @else
                 <div class="px-6 py-4">
-                    No existe trabajadoras activas
+                    No existe trabajadoras registrada
                 </div>
             @endif
 

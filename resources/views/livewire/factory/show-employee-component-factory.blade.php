@@ -26,6 +26,7 @@
                         <th class="px-4 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                             Nombre
                         </th>
+
                         <th class="px-4 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
 
                         </th>
@@ -47,6 +48,7 @@
                         <td class="px-6 py-4">
                             {{$item->name }}
                         </td>
+
                         <td class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap">
                             <x-jet-danger-button wire:click="$emit('bajaemployee',  {{ $item->id }} )">
                                 <i class="fas fa-arrow-circle-down"></i>

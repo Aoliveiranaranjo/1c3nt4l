@@ -94,7 +94,7 @@
                 wire:loading.attr="disabled"
                 wire:target="save"
                 wire:click="save">
-                    Actualizar cliente
+                    Actualizar artículo
             </x-jet-button>
 
         </div>

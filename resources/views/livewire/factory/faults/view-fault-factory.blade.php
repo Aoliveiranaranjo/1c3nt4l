@@ -46,7 +46,10 @@
                                 class="px-4 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                 Hora
                             </th>
-
+                            <th
+                                class="px-4 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
+                                Responsable
+                            </th>
                         </tr>
                     </thead>
 
@@ -70,23 +73,17 @@
                                 </td>
                                 <td class="px-6 py-4">
 
-                                    {{ $i = ($fault->updated_at == $fault->created_at) ? 'AVERÍA' : date('d/m/Y', strtotime($fault->updated_at)); }}
-
-
+                                    {{ $i = $fault->updated_at == $fault->created_at ? 'AVERÍA' : date('d/m/Y', strtotime($fault->updated_at)) }}
 
                                 </td>
                                 <td class="px-6 py-4">
-                                {{ $i = ($fault->updated_at == $fault->created_at) ? 'ACTIVA' : date('H:i', strtotime($fault->updated_at)); }}
+                                    {{ $i = $fault->updated_at == $fault->created_at ? 'ACTIVA' : date('H:i', strtotime($fault->updated_at)) }}
+                                </td>
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ $fault->user->name }}
                                 </td>
 
-
-                                <td class="px-6 py-4 font-medium flex ">
-
-                                    <x-jet-secondary-button class="text-indigo-500 hover:text-indigo-1000"
-                                        wire:click="edit( {{ $fault }} )">
-                                        <i class="fas fa-edit"></i>
-                                    </x-jet-secondary-button>
-                                </td>
                             </tr>
                         @endforeach
                     </tbody>

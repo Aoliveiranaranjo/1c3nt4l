@@ -19,7 +19,7 @@ class EditMechanicFactory extends Component
     //esto pendiente de modificar.
     protected $rules  = [
 
-        'production.observation' => 'nullable',
+        'production.observation' => 'nullable|max:255',
        // 'room_id' => 'required'
     ];
 

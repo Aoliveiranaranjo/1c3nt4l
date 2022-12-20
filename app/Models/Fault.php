@@ -23,6 +23,10 @@ class Fault extends Model
     public function mechanic(){
         return $this->belongsTo(Mechanic::class);
     }
+    //Relacion de Uno a Muchos inversa
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
     public function mechanicOne(){
         return $this->belongsTo(Mechanic::class,  'mechanic_asig', 'id',);
     }

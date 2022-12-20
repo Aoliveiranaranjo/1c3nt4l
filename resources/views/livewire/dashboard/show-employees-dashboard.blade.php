@@ -8,10 +8,10 @@
 
             <a class="ml-auto" href="{{ route('sistem.employee.index') }}">
                 <x-jet-secondary-button class="ml-auto">
-                   Lista de Empleados
+                    Lista de Empleados
                 </x-jet-secondary-button>
             </a>
-            <a  class="ml-auto" href="{{ route('sistem.employees.create') }}">
+            <a class="ml-auto" href="{{ route('sistem.employees.create') }}">
                 <x-button-enlace>
                     Agregar emplead@
                 </x-button-enlace>
@@ -51,7 +51,10 @@
                                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                 Emple.
                             </th>
-
+                            <th
+                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
+                                Tipo
+                            </th>
                             <th
                                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                 Sala
@@ -100,34 +103,13 @@
                                 class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                 Observación
                             </th>
-                            <th
-                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
-                                MultUnid
-                            </th>
-                            <th
-                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
-                                Cambio
-                            </th>
-                            <th
-                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
-                                Limp.
-                            </th>
-                            <th
-                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
-                                F. Final
-                            </th>
-                            <th
-                                class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
-
-                            </th>
-
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         @foreach ($productions as $production)
                             <tr>
                                 <td class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap">
-                                    <a href=" {{ route('sistem.productions.edit', $production) }} ">
+                                    <a href=" {{ route('sistem.productions.view', $production) }} ">
                                         <x-jet-secondary-button class="text-indigo-500 hover:text-indigo-900">
                                             <i class="fas fa-edit"></i>
                                         </x-jet-secondary-button>
@@ -140,8 +122,13 @@
                                     </div>
 
                                 </td>
+                                <td class="px-6 py-4 whitespace-no-wrap">
+                                    <div class="text-sm leading-5 text-gray-900">
+                                        {{ $production->typeorder->name }}
+                                    </div>
 
-                                 <td class="px-6 py-4 whitespace-no-wrap">
+                                </td>
+                                <td class="px-6 py-4 whitespace-no-wrap">
                                     <div class="text-sm leading-5 text-gray-900">
                                         {{ $production->room->nameRoom ?? 'S/Sala' }}
                                     </div>
@@ -190,13 +177,13 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap">
                                     <div class="text-sm text-right leading-5 text-gray-900">
-                                        {{ number_format ( $production->order->amount) }}
+                                        {{ number_format($production->order->amount) }}
                                     </div>
 
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap">
                                     <div class="text-sm text-right leading-5 text-gray-900">
-                                        {{ number_format ( $production->productionparts->sum('amount')) }}
+                                        {{ number_format($production->productionparts->sum('amount')) }}
                                     </div>
 
                                 </td>
@@ -214,37 +201,6 @@
                                     <div class="text-sm leading-5 text-gray-900">
                                         {{ $production->observation }}
                                     </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-no-wrap">
-                                    <div class="text-sm leading-5 text-gray-900">
-                                        {{ $production->multiUnid }}
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-no-wrap">
-                                    <div class="text-sm leading-5 text-gray-900">
-                                        {{ $production->changeH }}
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-no-wrap">
-                                    <div class="text-sm leading-5 text-gray-900">
-                                        {{ $production->cleaning }}
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-no-wrap">
-                                    <div class="text-sm leading-5 text-gray-900">
-                                        @if ($production->dateEnd)
-                                            {{ date('d/m/Y', strtotime($production->dateEnd)) }}
-                                        @else
-                                            Sin fecha
-                                        @endif
-                                    </div>
-
-                                </td>
-
-                                <td class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap">
-                                    <x-jet-danger-button wire:click="$emit('deliteproduction', {{ $production }} )">
-                                        <i class="fas fa-trash"></i>
-                                    </x-jet-danger-button>
                                 </td>
                             </tr>
                         @endforeach

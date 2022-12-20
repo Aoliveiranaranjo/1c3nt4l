@@ -79,21 +79,21 @@
                 <div>
                     <x-jet-label value="Fecha inicio mecánico"/>
                     <x-jet-input
-                        value="{{ $i = $production->start->created_at ?? 'Sin inicio' ? :  date('d/m/Y H:i:s', strtotime($production->start->created_at)) }} "
+                        value="{{  $production->start->created_at ?? 'Sin inicio' ?:  date('d/m/Y H:i:s', strtotime($production->start->created_at ))  }} "
                         type="text"
                         class="w-full text-center  bg-gray-200" disabled/>
                 </div>
                 <div>
                     <x-jet-label value="Fecha inicio calidad"/>
                     <x-jet-input
-                        value="{{ $i = $production->start->qualitie->created_at ?? 'Sin inicio' ? :   date('d/m/Y H:i:s', strtotime($production->start->qualitie->created_at ?? 'Sin inicio')) }} "
+                        value="{{ $i = $production->start->qualitie->created_at ?? 'Sin inicio' ? :   date('d/m/Y H:i:s', strtotime($production->start->qualitie->created_at)) }} "
                         type="text"
                         class="w-full text-center  bg-gray-200" disabled/>
                 </div>
                 <div>
                     <x-jet-label value="Fecha inicio responsable"/>
                     <x-jet-input
-                        value="{{ $i = $production->start->responsible->created_at ?? 'Sin inicio' ? :  date('d/m/Y H:i:s', strtotime( $production->start->responsible->created_at ?? 'Sin inicio'))  }} "
+                        value="{{ $i = $production->start->responsible->created_at ?? 'Sin inicio' ? :  date('d/m/Y H:i:s', strtotime( $production->start->responsible->created_at))  }} "
                         type="text"
                         class="w-full text-center  bg-gray-200" disabled/>
                 </div>

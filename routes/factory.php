@@ -51,53 +51,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-/*
-// Inicio  mecanicos fabricación
-Route::get('/inicio/mecanica', ShowMechanicFactory::class)->name('factory.mechanic.index');
-//Route::get('inicio/mecanica/{production}/crear', CreateMechanicFactory::class)->name('factory.mechanic.create');
-Route::get('inicio/mecanica/{production}/editar', EditMechanicFactory::class)->name('factory.mechanic.edit');
-
-// Inicio calidad fabricación
-Route::get('/inicio/calidad', ShowQualityFactory::class)->name('factory.qualities.index');
-//Route::get('inicio/calidad/crear', CreateProduction::class)->name('factory.productions.create');
-Route::get('inicio/calidad/{production}/editar', EditQualityFactory::class)->name('factory.qualities.edit');
-
-//produccion de calidad
-Route::get('/calidad/produccion', ShowQualityProduction::class)->name('quality.production.index');
-Route::get('/calidad/produccion/{order}/editar', EditQualityProduction::class)->name('quality.production.edit');
-
-
-//Producción en fabrica
-Route::get('/producciones', ShowProductionFactory::class)->name('factory.production.index');
-//Route::get('productions/create', CreateProduction::class)->name('sistem.productions.create');
-Route::get('producciones/{production}/editar', EditProductionFactory::class)->name('factory.productions.edit');
-//Route::get('/productions-closed', ShowProductionClosed::class)->name('sistem.production.index2');
-
-//Averías
-Route::get('/averias', ShowFaultFactory::class)->name('factory.fault.index');
-Route::get('/averias/{production}/editar', EditFaultFactory::class)->name('factory.fault.edit');
-
-//Cambios
-Route::get('/cambios', ShowChangeFactory::class)->name('factory.change.index');
-Route::get('/cambios/{change}/editar', EditChangeFactory::class)->name('factory.change.edit');
-
-
-//recontroles
-//Route::get('/recontroles',  [RecontrolController::class, 'index']  )->name('factory.recontrol.index'); //ojo ver si quito
-Route::get('/recontroles-show', ShowRecontrols::class)->name('factory.recontrol.show.index');
-Route::get('/recontroles-history', ShowHistoryRecontrols::class)->name('factory.recontrol.history.index');
-Route::get('/recontroles/crear', CreateRecontrols::class)->name('factory.recontrol.create');
-Route::get('/recontroles/{recontrol}/editar', EditRecontrols::class)->name('factory.recontrol.edit');
-Route::get('/recontroles/{recontrol}/editar-puig', EditPuigRecontrols::class)->name('factory.recontrol.edit.puig');
-Route::get('/recontroles/{recontrol}/editar-loreal', EditLorealRecontrols::class)->name('factory.recontrol.edit.loreal');
-Route::get('/recontroles-loreal', ShowLorealRecontrols::class)->name('factory.recontrol.show.index.loreal');
-Route::get('/recontroles-puig', ShowPuigRecontrols::class)->name('factory.recontrol.show.index.puig');
-
-//Almacén
-Route::get('/almacen', ShowStorePtFactory::class)->name('factory.store.pt.index');
-Route::get('/almacen-closed', ShowStorePtFactoryClosed::class)->name('factory.store.pt.closed');
-Route::get('/almacen/{qualityProduction}/editar', EditStorePtFactory::class)->name('factory.store.pt.edit');
-*/
 
 // Inicio  mecanicos fabricación
 Route::get('/inicio/mecanica', ShowMechanicFactory::class)->middleware('can:factory.mechanic.index')->name('factory.mechanic.index');

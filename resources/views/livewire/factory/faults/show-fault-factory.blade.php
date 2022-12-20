@@ -1,4 +1,4 @@
-<div wire:poll.30000ms>
+<div wire:poll.15000ms>
     <x-slot name="header">
         <div class="flex items-center">
             <h2 class="text-xl font-semibold leading-tight text-gray-500">

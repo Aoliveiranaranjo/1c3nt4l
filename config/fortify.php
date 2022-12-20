@@ -132,7 +132,7 @@ return [
     */
 
     'features' => [
-        Features::registration(),
+       // Features::registration(), //descomentar para crear usuarios y en app/providers/fortify...
         Features::resetPasswords(),
         // Features::emailVerification(),
         Features::updateProfileInformation(),
